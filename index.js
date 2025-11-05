@@ -17,6 +17,10 @@ const productRoutes = require('./routes/ProductRoutes');
 app.use('/api/categories', categoryRoutes);
 app.use('/api/products', productRoutes);
 
+app.get("/",(req,res)=>{
+  res.send("this is root server api is working")
+})
+
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
